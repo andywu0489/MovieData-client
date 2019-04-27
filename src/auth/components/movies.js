@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Directors from './directors'
 
 class Movies extends React.Component {
   constructor () {
@@ -19,22 +20,22 @@ class Movies extends React.Component {
       )
       .catch(console.error)
   }
+
   render () {
     return (
       <div>
         <p>{ this.state.movies ? console.log(this.state.movies.data.results) : ''}</p>
-        <ul>
+        <div>
           {this.state.movies ? this.state.movies.data.results.map(movie => (
             <div key={movie.id}>
               <h2>Title: {movie.title}</h2>
               <p>Description: {movie.overview}</p>
               <p>Original Title: {movie.original_title}</p>
-              <p>Director:<a>Link</a></p>
+              <Directors movieId={movie.id}/>
             </div>
           )) : ''
           }
-        </ul>
-        {console.log(this.state.purchases)}
+        </div>
       </div>
     )
   }

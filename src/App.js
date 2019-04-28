@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.scss'
-import Movies from './auth/components/Movies'
+import Delete from './auth/components/Delete'
+// import Movies from './auth/components/Movies'
 
 class App extends Component {
   constructor () {
@@ -14,7 +15,8 @@ class App extends Component {
   render () {
     return (
       <React.Fragment>
-        <Movies />
+        {/* <Movies /> */}
+        <Delete/>
       </React.Fragment>
     )
   }

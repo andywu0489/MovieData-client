@@ -1,8 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import Links from './Links.js'
-// import PostDirector from './PostDirector'
-// import PostMovie from './postMovie'
 
 class Directors extends React.Component {
   constructor () {

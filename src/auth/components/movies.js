@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 // import Directors from './directors'
-import apiUrl from '../../apiConfig'
+// import apiUrl from '../../apiConfig'
 import PostMovie from './PostMovie'
 
 class Movies extends React.Component {
@@ -20,23 +20,6 @@ class Movies extends React.Component {
     })
       .then(response => this.setState({ movies: response }))
       .catch(console.error)
-
-    if (this.state.movies === true) {
-      this.state.movies.data.results.forEach(movie => (
-        axios({
-          url: apiUrl + '/movies',
-          method: 'post',
-          data: {
-            movie: {
-              title: movie.title,
-              description: movie.overview,
-              original_title: movie.original_title
-            }
-          }
-        })
-      )
-      )
-    }
   }
 
   render () {
@@ -48,8 +31,7 @@ class Movies extends React.Component {
               <h2>Title: {movie.title}</h2>
               <p>Description: {movie.overview}</p>
               <p>Original Title: {movie.original_title}</p>
-              {/* <Directors movieId={movie.id} movie={movie}/> */}
-              <PostMovie movie={movie} movieId={movie.id}/>
+              {this.state.movies ? <PostMovie movie={movie} movieId={movie.id}/> : ''}
             </div>
           )) : ''
           }

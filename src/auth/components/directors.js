@@ -7,8 +7,7 @@ class Directors extends React.Component {
     super()
 
     this.state = {
-      crew: null,
-      name: null
+      crew: null
     }
   }
 

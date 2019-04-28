@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Refresh from './Refresh'
+// import Movies from './Movies'
 import apiUrl from '../../apiConfig'
 
 class Delete extends React.Component {
@@ -8,7 +9,8 @@ class Delete extends React.Component {
     super()
 
     this.state = {
-      response: null
+      response: null,
+      length: null
     }
   }
 

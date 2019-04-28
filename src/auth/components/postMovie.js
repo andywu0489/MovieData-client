@@ -24,7 +24,7 @@ class PostMovie extends React.Component {
         }
       }
     })
-      .then(response => this.setState({ response: response }), response => console.log(response))
+      .then(response => this.setState({ response: response }))
       .catch(console.error)
   }
   render () {

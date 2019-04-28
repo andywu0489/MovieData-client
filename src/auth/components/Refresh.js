@@ -8,24 +8,28 @@ class Refresh extends React.Component {
     super()
 
     this.state = {
-      response: null
+      response: 0
     }
   }
 
   componentDidMount () {
-    this.props.response.data.movies.forEach(movie => (
-      axios({
-        url: `${apiUrl}/movies/${movie.id}`,
-        method: 'delete'
-      })
-        .then(response => this.setState({ response: response }))
-        .catch(console.error)
-    ))
+    if (this.props.response.data.movies.length !== 0) {
+      this.props.response.data.movies.map(movie => (
+        axios({
+          url: `${apiUrl}/movies/${movie.id}`,
+          method: 'delete'
+        })
+          .then(response => this.setState({
+            response: this.state.response + 1
+          }))
+          .catch(console.error)
+      ))
+    }
   }
   render () {
     return (
       <div>
-        {this.state.response ? <Movies/> : ''}
+        {this.state.response === this.props.response.data.movies.length ? <Movies/> : ''}
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.scss'
-import Movies from './auth/components/movies'
+import Movies from './auth/components/Movies'
 
 class App extends Component {
   constructor () {

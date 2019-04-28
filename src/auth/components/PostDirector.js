@@ -23,7 +23,7 @@ class PostDirector extends React.Component {
         }
       }
     })
-      .then(response => console.log(response))
+      .then()
       .catch(console.error)
   }
   render () {

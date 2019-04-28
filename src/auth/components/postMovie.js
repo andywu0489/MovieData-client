@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import Directors from './directors'
+import Directors from './Directors'
 
 class PostMovie extends React.Component {
   constructor () {

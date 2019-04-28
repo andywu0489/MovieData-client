@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import Links from './links.js'
+// import PostDirector from './PostDirector'
+// import PostMovie from './postMovie'
 
 class Directors extends React.Component {
   constructor () {
@@ -29,10 +31,9 @@ class Directors extends React.Component {
           <p>Director(s):</p>
           {this.state.crew ? this.state.crew.data.crew.map((member) => {
             if (member.job === 'Director') {
-              console.log(member.id)
               return (
-                <ul>
-                  <li><Links member={member}/></li>
+                <ul key={member.id}>
+                  <li><Links member={member} id={this.props.id}/></li>
                 </ul>
               )
             }
